@@ -15,22 +15,18 @@ function SideNav({selectedIndex}) {
       name: "Background",
       icon: Image,
     },
-    {
-      id: 3,
-      name: "Upgrade",
-      icon: Shield,
-    },
+    
   ];
 
   const [activeIndex, setActiveIndex] = useState(0)
 
   return (
-    <div className=" border shadow-sm h-screen">
-      <div className="">
+    <div className="py-5 border shadow-md h-screen bg-white">
+      <div className=" border rounded-xl">
         {menuList.map((menu, index) => (
           <h2
             onClick={() => {setActiveIndex(index);selectedIndex(index)}}
-            className= {`p-2 text-lg px-3 text-gray-500 my-1 mx-1 cursor-pointer flex items-center gap-2 hover:bg-primary hover:text-[#F6ECD9] ${activeIndex==index&&'bg-primary text-white'}`}
+            className= {`p-2 text-lg px-3 text-gray-600 my-1 mx-1 cursor-pointer flex items-center gap-2 hover:bg-primary hover:text-[#F6ECD9] ${activeIndex==index&&'bg-primary text-white'}`}
             key={index}
           >
             <menu.icon />

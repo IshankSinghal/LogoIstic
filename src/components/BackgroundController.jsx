@@ -28,11 +28,11 @@ function BackgroundController() {
   return (
     <div>
       <div className=" py-2">
-        <label className=" p-2 flex justify-between items-center">Rounded <span>{rounded}</span></label>
+        <label className=" p-2 flex justify-between items-center text-black border-2">Rounded <span>{rounded}</span></label>
         <Slider defaultValue={[rounded]} max={360} step={1} onValueChange={(event) => setRounded(event[0])}/>
       </div>
       <div className=" py-2">
-        <label className=" p-2 flex justify-between items-center">Padding <span>{padding}</span></label>
+        <label className=" p-2 flex justify-between items-center text-black border-2">Padding <span>{padding}</span></label>
         <Slider defaultValue={[padding]} max={100} step={1} onValueChange={(event) => setPadding(event[0])}/>
       </div>
       <div className=" py-2">

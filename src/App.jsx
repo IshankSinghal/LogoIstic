@@ -17,24 +17,26 @@ function App() {
   const [downloadIcon,setDownloadIcon] = useState();
 
   return (
-    <UpdateContextStorage.Provider value={{updateStorage,setUpdateStorage}}>
-      <div >
-        <Header DownloadIcon={setDownloadIcon}/>
-        <div className=" w-64 fixed">
-          <SideNav selectedIndex={(value) => setSelectedIndex(value)} />
-        </div>
-        <div className=" ml-64 grid grid-cols-1 md:grid-cols-6 fixed">
-          <div className=" md:col-span-2 border h-screen shadow-sm p-5 overflow-auto">
-            {selectedIndex == 0 ? <IconController /> : <BackgroundController />}
+    <UpdateContextStorage.Provider value={{ updateStorage, setUpdateStorage }}>
+      <div className='bg-white min-h-screen flex flex-col'>
+        <Header DownloadIcon={setDownloadIcon} />
+        <div className="flex flex-grow">
+          <div className="w-64 fixed h-full">
+            <SideNav selectedIndex={(value) => setSelectedIndex(value)} />
           </div>
-          <div className=" md:col-span-3">
-            <LogoPreview downloadIcon={downloadIcon}/>
+          <div className="ml-64 flex-grow grid grid-cols-1 md:grid-cols-6">
+            <div className="md:col-span-2 border shadow-sm p-5 overflow-auto">
+              {selectedIndex == 0 ? <IconController /> : <BackgroundController />}
+            </div>
+            <div className="md:col-span-3">
+              <LogoPreview downloadIcon={downloadIcon} />
+            </div>
+            <div className="bg-blue-100 md:col-span-1 h-full">Ads Banner</div>
           </div>
-          <div className=" bg-blue-100">Ads Banner</div>
         </div>
       </div>
     </UpdateContextStorage.Provider>
   )
-}
+} 
 
 export default App

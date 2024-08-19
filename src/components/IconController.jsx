@@ -31,18 +31,20 @@ function IconController() {
 
   return (
     <div>
-      <div className="">
-        <IconList selectedIcon={(icon)=>setIcon(icon)}/>
+      <div className="font-bold text-black text-lg">
+        <div className=" ">
+          <IconList selectedIcon={(icon)=>setIcon(icon)} />
+        </div>
         <div className=" py-2">
-            <label className=" p-2 flex justify-between items-center">Size <span>{size} px</span></label>
+            <label className=" p-2 flex justify-between items-center ">Size <span>{size} px</span></label>
             <Slider defaultValue={[size]} max={512} step={1} onValueChange={(event) => setSize(event[0]) } />
         </div>
         <div className=" py-2">
-            <label className=" p-2 flex justify-between items-center">Rotate <span>{rotate} &#176;</span></label>
+            <label className=" p-2 flex justify-between items-center ">Rotate <span>{rotate} &#176;</span></label>
             <Slider defaultValue={[rotate]} max={360} step={1} onValueChange={(event) => setRotate(event[0]) } />
         </div>
         <div className=" py-2">
-            <label className=" p-2 flex justify-between items-center">Icon Color</label>
+            <label className=" p-2 flex justify-between items-center ">Icon Color</label>
             <ColorPickerController hideController={true} selectedColor={(color)=>setColor(color)} />
         </div>
       </div>
