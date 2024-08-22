@@ -11,11 +11,13 @@ function Header({ DownloadIcon }) {
         className='flex items-center gap-2 group'
         onMouseEnter={() => setTextVisible(true)}
       >
-        <img
-          className='h-12 w-15 transform transition-transform duration-300 hover:rotate-[360deg]'
-          src='/Logo.png'
-          alt='Logo'
-        />
+        <div className='h-12 w-12'>
+          <img
+            className=' transform transition-transform duration-300 hover:rotate-[360deg] objest-cover'
+            src='/Logo.png'
+            alt='Logo'
+          />
+        </div>
         <div className={`text-black text-lg font-semibold transition-opacity duration-1000 ease-in-out ${textVisible ? 'opacity-100' : 'opacity-0'}`}>
           LOGOISTIC
         </div>

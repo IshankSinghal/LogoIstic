@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  
   darkMode: ["class"],
   content: [
     './pages/**/*.{js,jsx}',
@@ -17,6 +18,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        adlam: ['ADLaM Display', 'sans-serif'],
+        algerian:['Algerian',]
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
