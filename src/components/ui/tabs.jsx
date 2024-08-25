@@ -4,22 +4,40 @@ import { cn } from "@/lib/utils";
 
 const Tabs = TabsPrimitive.Root;
 
-const TabsList = React.forwardRef(function TabsList({ className, ...props }, ref) {
-  return (
+const TabsWrapper = React.forwardRef(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground shadow-lg",
+      className
+    )}
+    {...props}
+  />
+));
+TabsWrapper.displayName = "TabsWrapper";
+
+const TabsList = React.forwardRef(
+  (
+    { className, ...props },
+    ref
+  ) => (
     <TabsPrimitive.List
       ref={ref}
       className={cn(
-        "inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground",
+        "inline-flex space-x-2", // Adding space between the tabs
         className
       )}
       {...props}
     />
-  );
-});
+  )
+);
 TabsList.displayName = TabsPrimitive.List.displayName;
 
-const TabsTrigger = React.forwardRef(function TabsTrigger({ className, ...props }, ref) {
-  return (
+const TabsTrigger = React.forwardRef(
+  (
+    { className, ...props },
+    ref
+  ) => (
     <TabsPrimitive.Trigger
       ref={ref}
       className={cn(
@@ -28,12 +46,15 @@ const TabsTrigger = React.forwardRef(function TabsTrigger({ className, ...props 
       )}
       {...props}
     />
-  );
-});
+  )
+);
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
 
-const TabsContent = React.forwardRef(function TabsContent({ className, ...props }, ref) {
-  return (
+const TabsContent = React.forwardRef(
+  (
+    { className, ...props },
+    ref
+  ) => (
     <TabsPrimitive.Content
       ref={ref}
       className={cn(
@@ -42,8 +63,8 @@ const TabsContent = React.forwardRef(function TabsContent({ className, ...props 
       )}
       {...props}
     />
-  );
-});
+  )
+);
 TabsContent.displayName = TabsPrimitive.Content.displayName;
 
-export { Tabs, TabsList, TabsTrigger, TabsContent };
+export { Tabs, TabsWrapper, TabsList, TabsTrigger, TabsContent };

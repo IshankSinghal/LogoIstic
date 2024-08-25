@@ -30,12 +30,13 @@ function BackgroundController() {
   });
 
   return (
-    <div className="font-bold text-black text-lg py-2">
-      <div className="mb-4 border-2 border-black bg-white rounded-xl py-2 px-2 shadow-lg transform transition-transform hover:scale-105">
+    <div className="font-bold text-[#1C1C1C] text-lg py-2">
+      <div className="mb-4 border-2 border-black bg-white rounded-xl py-2 px-2 ">
         <label className="p-2 flex justify-between items-center">
           Rounded <span>{rounded}</span>
         </label>
         <Slider
+          className="px-3 transform transition-transform hover:scale-105 "
           defaultValue={[rounded]}
           max={360}
           step={1}
@@ -43,11 +44,12 @@ function BackgroundController() {
         />
       </div>
 
-      <div className="mb-4 border-2 border-black bg-white rounded-xl py-2 px-2 shadow-lg transform transition-transform hover:scale-105">
+      <div className="mb-4 border-2 border-black bg-white rounded-xl py-2 px-2 ">
         <label className="p-2 flex justify-between items-center">
           Padding <span>{padding}</span>
         </label>
         <Slider
+          className="px-3 shadow-lg transform transition-transform hover:scale-105 "
           defaultValue={[padding]}
           max={100}
           step={1}
@@ -55,11 +57,11 @@ function BackgroundController() {
         />
       </div>
 
-      <div className="mb-4 border-2 border-black bg-white rounded-xl py-2 px-2 shadow-lg transform transition-transform hover:scale-105">
+      <div className="mb-4 border-2 border-black bg-white rounded-xl py-5 px-2 ">
         <label className="p-2 flex justify-between items-center">
           Background Color
         </label>
-        <div className="flex justify-center place-items-center">
+        <div className="flex justify-center place-items-center transform transition-transform hover:scale-105">
           <ColorPickerController
             hideController={false}
             selectedColor={(color) => setColor(color)}

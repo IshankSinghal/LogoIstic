@@ -64,51 +64,53 @@ function IconList({ selectedIcon }) {
         <Dialog open={openDialog} onOpenChange={setOpenDialog}>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Pick Your Icon...</DialogTitle>
-              <Tabs defaultValue="icons" className="w-[400px]">
-                <TabsList>
-                  <TabsTrigger value="01_Icons">01_Icons</TabsTrigger>
-                  <TabsTrigger value="02_Icons">02_Icons</TabsTrigger>
-                </TabsList>
-                <TabsContent value="01_Icons">
-                  <div
-                    className="background-color: bg-white grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 
-                gap-4 overflow-auto h-[400px] p-6"
-                  >
-                    {iconList.map((item, index) => (
-                      <div
-                        className="border p-3 flex rounded-md items-center justify-center cursor-pointer"
-                        onClick={() => {
-                          selectedIcon(item);
-                          setOpenDialog(false);
-                          setIcon(item);
-                        }}
-                      >
-                        <Icon name={item} color={"#000"} size={20} />
-                      </div>
-                    ))}
-                  </div>
-                </TabsContent>
-                <TabsContent value="02_Icons">
-                  <div
-                    className="background-color: bg-white grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 
-                gap-4 overflow-auto h-[400px] p-6"
-                  >
-                    {pngIconList.map((item, index) => (
-                      <div
-                        className="border p-3 flex rounded-md items-center justify-center cursor-pointer"
-                        onClick={() => {
-                          selectedIcon(item);
-                          setOpenDialog(false);
-                          setIcon(item);
-                        }}
-                      >
-                        <img src={BASE_URL + "/png/" + item} />
-                      </div>
-                    ))}
-                  </div>
-                </TabsContent>
-              </Tabs>
+              <DialogTitle>Pick Your Image...</DialogTitle>
+              <DialogDescription>
+                <Tabs defaultValue="icons" className="w-[400px]">
+                  <TabsList>
+                    <TabsTrigger className="transform transition-transform hover:scale-105" value="01_Icons">01_Icons</TabsTrigger>
+                    <TabsTrigger className="transform transition-transform hover:scale-105" value="02_Icons">02_Icons</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="01_Icons">
+                    <div
+                      className="background-color:  grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 
+                  gap-4  h-[400px] p-6"
+                    >
+                      {iconList.map((item, index) => (
+                        <div
+                          className="border-2 bg-white p-2 flex rounded-xl items-center justify-center cursor-pointer"
+                          onClick={() => {
+                            selectedIcon(item);
+                            setOpenDialog(false);
+                            setIcon(item);
+                          }}
+                        >
+                          <Icon name={item} color={"#000"} size={20} />
+                        </div>
+                      ))}
+                    </div>
+                  </TabsContent>
+                  <TabsContent value="02_Icons">
+                    <div
+                      className="background-color:  grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 
+                  gap-4 h-[400px] p-6"
+                    >
+                      {pngIconList.map((item, index) => (
+                        <div
+                          className="border p-2 bg-white flex rounded-xl items-center justify-center cursor-pointer"
+                          onClick={() => {
+                            selectedIcon(item);
+                            setOpenDialog(false);
+                            setIcon(item);
+                          }}
+                        >
+                          <img src={BASE_URL + "/png/" + item} />
+                        </div>
+                      ))}
+                    </div>
+                  </TabsContent>
+                </Tabs>
+              </DialogDescription>
             </DialogHeader>
           </DialogContent>
         </Dialog>

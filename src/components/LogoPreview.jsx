@@ -23,7 +23,7 @@ function LogoPreview({downloadIcon}) {
     },[downloadIcon])
 
     const downloadPngLogo=()=>{
-        const downloadDiv = document.getElementById("downloadLogo")
+        const downloadDiv = document.getElementById("downloadLogo");
         html2canvas(downloadDiv,{
             backgroundColor:null
         }).then(canvas=>{
@@ -38,7 +38,7 @@ function LogoPreview({downloadIcon}) {
     const Icon = ({name,color, size, rotate}) =>{
         const LucidIcon = icons[name];
         if(!LucidIcon){
-            return;
+            return;F
         }
         return <LucidIcon color={color} size={size} style={{
             transform:`rotate(${rotate}deg)`,
@@ -47,7 +47,7 @@ function LogoPreview({downloadIcon}) {
 
     return (
       <div className=" flex items-center justify-center h-screen w-full">
-          <div className=" h-[450px] w-[450px] bg-gray-200 outline-dotted outline-gray-300" style={{
+          <div className=" h-[450px] w-[450px] bg-gray-200 outline-dotted outline-[#3A3A75]" style={{
             padding:storageValue?.bgPadding,
           }}>
               <div id='downloadLogo' className=" h-full w-full flex items-center justify-center" 
@@ -56,11 +56,11 @@ function LogoPreview({downloadIcon}) {
                         background:storageValue?.bgColor,
                     }}
             > 
-            {storageValue?.icon?.includes('.png')? <img src={BASE_URL+'/png/'+storageValue.icon}
+            {storageValue?.icon?.includes('.png')? <img src={BASE_URL+'/png/'+storageValue?.icon}
                 style={{
                     height:storageValue?.iconSize,
                     width:storageValue?.iconSize,
-                    // rotate:
+                    transform: `rotate(${storageValue?.iconRotate}deg)`,
                 }}
             />:
             <Icon name={storageValue?.icon || 0}
