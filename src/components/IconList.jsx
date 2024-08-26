@@ -73,7 +73,7 @@ function IconList({ selectedIcon }) {
                   </TabsList>
                   <TabsContent value="01_Icons">
                     <div
-                      className="background-color:  grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 
+                      className="background-color:  grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 overflow-auto
                   gap-4  h-[400px] p-6"
                     >
                       {iconList.map((item, index) => (
@@ -92,7 +92,7 @@ function IconList({ selectedIcon }) {
                   </TabsContent>
                   <TabsContent value="02_Icons">
                     <div
-                      className="background-color:  grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 
+                      className="background-color:  grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 overflow-auto
                   gap-4 h-[400px] p-6"
                     >
                       {pngIconList.map((item, index) => (
