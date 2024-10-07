@@ -12,9 +12,15 @@ function IconController() {
 
   const storageValue = JSON.parse(localStorage.getItem("value"));
 
-  const [size, setSize] = useState(storageValue ? storageValue?.iconSize : defaultSize);
-  const [rotate, setRotate] = useState(storageValue ? storageValue?.iconRotate : defaultRotate);
-  const [color, setColor] = useState(storageValue ? storageValue?.iconColor : defaultColor);
+  const [size, setSize] = useState(
+    storageValue ? storageValue?.iconSize : defaultSize
+  );
+  const [rotate, setRotate] = useState(
+    storageValue ? storageValue?.iconRotate : defaultRotate
+  );
+  const [color, setColor] = useState(
+    storageValue ? storageValue?.iconColor : defaultColor
+  );
 
   const { updateStorage, setUpdateStorage } = useContext(UpdateContextStorage);
   const [icon, setIcon] = useState(storageValue ? storageValue?.icon : "Smile");

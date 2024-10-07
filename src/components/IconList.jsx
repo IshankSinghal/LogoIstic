@@ -45,7 +45,6 @@ function IconList({ selectedIcon }) {
     <div>
       <div className="">
         <div className="px-2">
-
           <label>Icon</label>
         </div>
         <div
@@ -68,8 +67,18 @@ function IconList({ selectedIcon }) {
               <DialogDescription>
                 <Tabs defaultValue="icons" className="w-[400px]">
                   <TabsList>
-                    <TabsTrigger className="transform transition-transform hover:scale-105" value="01_Icons">01_Icons</TabsTrigger>
-                    <TabsTrigger className="transform transition-transform hover:scale-105" value="02_Icons">02_Icons</TabsTrigger>
+                    <TabsTrigger
+                      className="transform transition-transform hover:scale-105"
+                      value="01_Icons"
+                    >
+                      01_Icons
+                    </TabsTrigger>
+                    <TabsTrigger
+                      className="transform transition-transform hover:scale-105"
+                      value="02_Icons"
+                    >
+                      02_Icons
+                    </TabsTrigger>
                   </TabsList>
                   <TabsContent value="01_Icons">
                     <div

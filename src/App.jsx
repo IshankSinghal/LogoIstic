@@ -1,17 +1,13 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import Header from "./components/Header";
 import SideNav from "./components/SideNav";
 import BackgroundController from "./components/BackgroundController";
 import IconController from "./components/IconController";
 import LogoPreview from "./components/LogoPreview";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import { Button } from "./components/ui/button";
 import { UpdateContextStorage } from "./context/UpdateStorageContext";
 
 function App() {
-  const [count, setCount] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState();
   const [updateStorage, setUpdateStorage] = useState({});
   const [downloadIcon, setDownloadIcon] = useState();
