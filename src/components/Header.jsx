@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "./ui/button";
-import { Download } from "lucide-react";
-import { Save } from "lucide-react";
+import { Download, Save } from "lucide-react";
 
-function Header({ DownloadIcon }) {
+function Header({ DownloadIcon, SaveLogo }) {
+  // Add SaveLogo as a prop
   const [textVisible, setTextVisible] = useState(false);
 
   return (
@@ -27,12 +27,15 @@ function Header({ DownloadIcon }) {
         </div>
       </div>
       <div className="flex items-center justify-center gap-3">
+        {/* Save Logo Button */}
         <Button
           className="h-12 w-15 flex gap-2 items-center text-[#F6ECD9] rounded-xl shadow-xl mix-blend-luminosity"
-          // onClick={() => DownloadIcon(Date.now())}
+          onClick={() => SaveLogo(Date.now())} // Trigger the Save function
         >
           <Save /> Save Logo
         </Button>
+
+        {/* Download Button */}
         <Button
           className="h-12 w-15 flex gap-2 items-center text-[#F6ECD9] rounded-xl shadow-xl mix-blend-luminosity"
           onClick={() => DownloadIcon(Date.now())}

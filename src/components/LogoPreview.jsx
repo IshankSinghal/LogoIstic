@@ -5,13 +5,12 @@ import html2canvas from "html2canvas";
 
 const BASE_URL = "https://logoexpress.tubeguruji.com";
 
-function LogoPreview({ downloadIcon }) {
+function LogoPreview({ downloadIcon, onSave }) {
   const [storageValue, setStorageValue] = useState();
   const { updateStorage, setUpdateStorage } = useContext(UpdateContextStorage);
 
   useEffect(() => {
     const storageData = JSON.parse(localStorage.getItem("value"));
-    // console.log(storageData?.bgRounded);
     setStorageValue(storageData);
   }, [updateStorage]);
 
@@ -31,6 +30,8 @@ function LogoPreview({ downloadIcon }) {
       downloadLink.href = pngImg;
       downloadLink.download = "LogoIstic_LOGO.png";
       downloadLink.click();
+
+      onSave(pngImg);
     });
   };
 
